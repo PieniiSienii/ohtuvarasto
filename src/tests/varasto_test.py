@@ -51,7 +51,7 @@ class TestVarasto(unittest.TestCase):
     def test_nollataan_neg_alkusaldo(self):
         neg_varasto = Varasto(10,-5)
         self.assertAlmostEqual(neg_varasto.saldo, 0.0)
-    
+
     def test_nollataan_neg_tilavuus(self):
         neg_tilavuus = Varasto(-5)
         self.assertAlmostEqual(neg_tilavuus.tilavuus, 0)
@@ -63,14 +63,13 @@ class TestVarasto(unittest.TestCase):
     def test_ottaminen_neg_maara_palauttaa_0(self):
         saatu = self.varasto.ota_varastosta(-5)
         self.assertAlmostEqual(saatu, 0)
-    
     def test_saldo_on_max_tilavuus(self):
         varasto = Varasto(10,15)
         self.assertAlmostEqual(varasto.saldo, 10)
-    
+
     def test_lisays_taydentaa_varaston(self):
         self.varasto.lisaa_varastoon(10)
-        self.assertAlmostEqual(self.varasto.saldo, 10)  
+        self.assertAlmostEqual(self.varasto.saldo, 10)
 
     def test_merkkijonoesitys(self):
         self.varasto.lisaa_varastoon(8)
@@ -78,3 +77,4 @@ class TestVarasto(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+    
